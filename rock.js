@@ -32,9 +32,19 @@ function getComputerMove(){
     }
 }
 
-let player1 = prompt("Choose rock paper or scissors");
-let player2 = getComputerMove();
 
-let result = getWinner(player1, player2);
+function playAgain() {
+    confirm("Another round?");
+}
 
-alert(result);
+let playAgainResult = playAgain();
+
+console.log(playAgainResult);
+
+
+// let player1 = prompt("Choose rock paper or scissors");
+// let player2 = getComputerMove();
+
+// let result = getWinner(player1, player2);
+
+// alert(result);
