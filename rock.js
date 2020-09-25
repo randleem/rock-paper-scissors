@@ -54,27 +54,36 @@ function upDateScore(result, object){
     }
 }
 
-let play = true;
-let gamesPlayed = 0;
-let player1Score = {
-    wins: 0,
-    losses: 0,
-    draws: 0
-};
+// let play = true;
+// let gamesPlayed = 0;
+// let player1Score = {
+//     wins: 0,
+//     losses: 0,
+//     draws: 0
+// };
 
 
-while (play === true) {
-    let player1 = prompt("Choose rock paper or scissors");
-    let player2 = getComputerMove();
-    let result = getWinner(player1, player2);
-    gamesPlayed++;
-    upDateScore(result, player1Score);
-    play = confirm(`The result is ${endMessage(result)}, would you like to play again?\n
-                    Games Played: ${gamesPlayed}\n
-                    Your Wins: ${player1Score.wins}\n
-                    Your Draws: ${player1Score.draws}\n
-                    Your Losses: ${player1Score.losses}`);
-}
+// while (play === true) {
+////     let player1 = prompt("Choose rock paper or scissors");
+//     let player2 = getComputerMove();
+//     let result = getWinner(player1, player2);
+//     gamesPlayed++;
+//     upDateScore(result, player1Score);
+//     play = confirm(`The result is ${endMessage(result)}, would you like to play again?\n
+//                     Games Played: ${gamesPlayed}\n
+//                     Your Wins: ${player1Score.wins}\n
+//                     Your Draws: ${player1Score.draws}\n
+//                     Your Losses: ${player1Score.losses}`);
+// }
+
+
+//Task 7
+
+let rockButton = document.querySelector("#rock")
+let paperButton = document.querySelector("#papers")
+let scissorsButton = document.querySelector("#scissors")
+
+rockButton.addEventListener("click", getWinner("rock",getComputerMove()))
 
 // each button will trigger a game start event with players selection
 // Then when player has made a selection the result appears and scores update
