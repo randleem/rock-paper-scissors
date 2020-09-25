@@ -80,7 +80,7 @@ function upDateScore(result, object){
 //Task 7
 
 let rockButton = document.querySelector("#rock");
-let paperButton = document.querySelector("#papers");
+let paperButton = document.querySelector("#paper");
 let scissorsButton = document.querySelector("#scissors");
 
 rockButton.addEventListener("click", rockClick);
@@ -88,21 +88,21 @@ paperButton.addEventListener("click", paperClick);
 scissorsButton.addEventListener("click", scissorsClick);
 
 function rockClick() {
-    let player2 = getComputerMove();
-    let result = getWinner("rock", player2);
-    console.log(endMessage(result));
+    playGame("rock")
 }
 
 function paperClick() {
-    let player2 = getComputerMove();
-    let result = getWinner("paper", player2);
-    console.log(endMessage(result));
+    playGame("paper")
 }
 
 function scissorsClick() {
+    playGame("scissors")
+}
+
+function playGame(playerMove) {
     let player2 = getComputerMove();
-    let result = getWinner("scissors", player2);
-    console.log(endMessage(result));
+    let result = getWinner(playerMove, player2);
+    console.log(endMessage(result));  
 }
 
 // each button will trigger a game start event with players selection
