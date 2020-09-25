@@ -32,19 +32,26 @@ function getComputerMove(){
     }
 }
 
-
-function playAgain() {
-    confirm("Another round?");
+function endMessage(result) {
+    let message = ``;
+    if (result === 0) {
+        message = `its a draw`;
+    }else if (result === 1) {
+        message = `You Win!`;
+    }else if (result === -1) {
+        message = `Computer Wins`;
+    }
+    return message;
 }
 
-let playAgainResult = playAgain();
+let play = true;
+while (play === true) {
+    let player1 = prompt("Choose rock paper or scissors");
+    let player2 = getComputerMove();
+    let result = getWinner(player1, player2);
+    play = confirm(`result is ${endMessage(result)}, would you like to play again?`);
+}
 
-console.log(playAgainResult);
 
 
-// let player1 = prompt("Choose rock paper or scissors");
-// let player2 = getComputerMove();
 
-// let result = getWinner(player1, player2);
-
-// alert(result);
