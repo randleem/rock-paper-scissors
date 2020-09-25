@@ -45,12 +45,18 @@ function endMessage(result) {
 }
 
 let play = true;
+let gamesPlayed = 0;
 while (play === true) {
     let player1 = prompt("Choose rock paper or scissors");
     let player2 = getComputerMove();
     let result = getWinner(player1, player2);
-    play = confirm(`result is ${endMessage(result)}, would you like to play again?`);
+    gamesPlayed++;
+    play = confirm(`The result is ${endMessage(result)}, would you like to play again? \n Games Played ${gamesPlayed}`);
 }
+
+// Variable for number of games played, everytime getWinner is called 1 is added to number of games played
+// Variable for accumulation of results from games played keeps track of wins losses and draws
+// Number of games played and wins, losses and draws displayed in end message
 
 
 
