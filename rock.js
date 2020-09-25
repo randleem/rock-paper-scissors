@@ -79,11 +79,31 @@ function upDateScore(result, object){
 
 //Task 7
 
-let rockButton = document.querySelector("#rock")
-let paperButton = document.querySelector("#papers")
-let scissorsButton = document.querySelector("#scissors")
+let rockButton = document.querySelector("#rock");
+let paperButton = document.querySelector("#papers");
+let scissorsButton = document.querySelector("#scissors");
 
-rockButton.addEventListener("click", getWinner("rock",getComputerMove()))
+rockButton.addEventListener("click", rockClick);
+paperButton.addEventListener("click", paperClick);
+scissorsButton.addEventListener("click", scissorsClick);
+
+function rockClick() {
+    let player2 = getComputerMove();
+    let result = getWinner("rock", player2);
+    console.log(endMessage(result));
+}
+
+function paperClick() {
+    let player2 = getComputerMove();
+    let result = getWinner("paper", player2);
+    console.log(endMessage(result));
+}
+
+function scissorsClick() {
+    let player2 = getComputerMove();
+    let result = getWinner("scissors", player2);
+    console.log(endMessage(result));
+}
 
 // each button will trigger a game start event with players selection
 // Then when player has made a selection the result appears and scores update
