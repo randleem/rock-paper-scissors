@@ -63,18 +63,18 @@ function upDateScore(result, object){
 // };
 
 
-while (play === true) {
+//while (play === true) {
 //     let player1 = prompt("Choose rock paper or scissors");
    // let player2 = getComputerMove();
     //let result = getWinner(player1, player2);
-    gamesPlayed++;
-    upDateScore(result, player1Score);
-    play = confirm(`The result is ${endMessage(result)}, would you like to play again?\n
-                    Games Played: ${gamesPlayed}\n
-                    Your Wins: ${player1Score.wins}\n
-                    Your Draws: ${player1Score.draws}\n
-                    Your Losses: ${player1Score.losses}`);
-}
+//     gamesPlayed++;
+//     upDateScore(result, player1Score);
+//     play = confirm(`The result is ${endMessage(result)}, would you like to play again?\n
+//                     Games Played: ${gamesPlayed}\n
+//                     Your Wins: ${player1Score.wins}\n
+//                     Your Draws: ${player1Score.draws}\n
+//                     Your Losses: ${player1Score.losses}`);
+// }
 
 
 //Task 7
@@ -112,10 +112,17 @@ function playGame(playerMove) {
     console.log(endMessage(result));  
     gamesPlayed++;
     upDateScore(result, playerScore);
+    winsUpdate.innerText = `Games Won: ${playerScore.wins}`
+    
 }
 
-// Update the inner ext of the Scores Area/ Games played
+let winsUpdate = document.querySelector("#gamesWon")
+let lossesUpdate = document.querySelector("#gamesLost")
+let drawsUpdate = document.querySelector("#gamesDrawn")
+let playsUpdate = document.querySelector("gamesPlayed")
 
-// each button will trigger a game start event with players selection
+
+
+// Update the inner text of the Scores Area/ Games played
 // Then when player has made a selection the result appears and scores update
 
