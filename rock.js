@@ -21,11 +21,20 @@ function getWinner(player1, player2) {
         }
 }
 
-//let player1 = prompt("Choose rock paper or scissors");
-let player2 = Math.floor(Math.random()*3);
+function getComputerMove(){
+    let random = Math.floor(Math.random()*3);
+    if (random === 0) {
+        return "rock";
+    }else if (random === 1) {
+        return "paper";
+    }else if (random === 2) {
+        return "scissors";
+    }
+}
 
-console.log(player2);
+let player1 = prompt("Choose rock paper or scissors");
+let player2 = getComputerMove();
 
-//let result = getWinner(player1, "rock");
+let result = getWinner(player1, player2);
 
-//alert(result);
+alert(result);
