@@ -126,6 +126,4 @@ let playsUpdate = document.querySelector("#gamesPlayed");
 let resultUpdate = document.querySelector("#resultsMessage");
 
 
-// Update the inner text of the Scores Area/ Games played
-// Then when player has made a selection the result appears and scores update
 
