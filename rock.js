@@ -112,15 +112,18 @@ function playGame(playerMove) {
     console.log(endMessage(result));  
     gamesPlayed++;
     upDateScore(result, playerScore);
-    winsUpdate.innerText = `Games Won: ${playerScore.wins}`
-    
+    winsUpdate.innerText = `Games Won: ${playerScore.wins}`;
+    lossesUpdate.innerText = `Games Lost: ${playerScore.losses}`;
+    drawsUpdate.innerText = `Games Drawn: ${playerScore.draws}`;
+    playsUpdate.innerText = `Games Played: ${gamesPlayed}`;
+    resultUpdate.innerText = `You Played: ${playerMove}, the Computer Played: ${player2}, ${endMessage(result)}.`
 }
 
-let winsUpdate = document.querySelector("#gamesWon")
-let lossesUpdate = document.querySelector("#gamesLost")
-let drawsUpdate = document.querySelector("#gamesDrawn")
-let playsUpdate = document.querySelector("gamesPlayed")
-
+let winsUpdate = document.querySelector("#gamesWon");
+let lossesUpdate = document.querySelector("#gamesLost");
+let drawsUpdate = document.querySelector("#gamesDrawn");
+let playsUpdate = document.querySelector("#gamesPlayed");
+let resultUpdate = document.querySelector("#resultsMessage");
 
 
 // Update the inner text of the Scores Area/ Games played
