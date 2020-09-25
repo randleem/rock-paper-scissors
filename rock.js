@@ -75,14 +75,11 @@ while (play === true) {
                     Your Losses: ${player1Score.losses}`);
 }
 
-// Variable for number of games played, everytime getWinner is called 1 is added to number of games played
-// Variable for accumulation of results from games played keeps track of wins losses and draws
-// Number of games played and wins, losses and draws displayed in end message
+// H1 Lets play Rock, Paper, Scissors
+// H2 "Player 1 its Your Move!" 
+// three buttons - Rock Paper Scissors
+// Display of Scores showing games played, wins losses and draws all set to zero to start
 
-// let player2Score = {
-//     wins: 0,
-//     losses: 0,
-//     draws: 0
-// };
-
+// each button will trigger a game start event with players selection
+// Then when player has made a selection the result appears and scores update
 
