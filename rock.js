@@ -1,27 +1,30 @@
-let playerMove = "rock";
-let computerMove = "paper";
+let playerMove = "scissors";
+let computerMove = "rock";
 
-if (playerMove === "rock" && computerMove === "rock") {
-    return "draw";
-}
+if  (
+        (playerMove === "rock" && computerMove === "rock") ||
+        (playerMove === "paper" && computerMove === "paper") ||
+        (playerMove === "scissors" && computerMove === "scissors")
+    ) {
 
-if (playerMove === "paper" && computerMove === "paper") {
-    return "draw";
-}
+        console.log("draw")
 
-if (playerMove === "scissors" && computerMove === "scissors") {
-    return "draw";
-}
+    } else if (
+        (playerMove === "rock" && computerMove === "paper") ||
+        (playerMove === "paper" && computerMove === "scissors") ||
+        (playerMove === "scissors" && computerMove === "rock") 
 
-if (playerMove === "rock" && computerMove === "paper") {
-    return "computer wins";
-}
+    ) {
 
-if (playerMove === "paper" && computerMove === "paper") {
-    return "draw";
-}
+        console.log("computer wins")
 
-if (playerMove === "scissors" && computerMove === "scissors") {
-    return "draw";
-}
+    } else if (
+        (playerMove === "rock" && computerMove === "scissors") ||
+        (playerMove === "paper" && computerMove === "rock") ||
+        (playerMove === "scissors" && computerMove === "paper")
+    ) {
+
+        console.log("player wins")
+
+    }
 
