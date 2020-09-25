@@ -1,4 +1,4 @@
-
+// Works out who won the game, Returns 0 for a draw, 1 for player 1 win -1 for player 2 win
 function getWinner(player1, player2) {
     if  (
             (player1 === "rock" && player2 === "rock") ||
@@ -21,6 +21,7 @@ function getWinner(player1, player2) {
         }
 }
 
+// Randomly chooses a move for the computer, returns the move as a string
 function getComputerMove(){
     let random = Math.floor(Math.random()*3);
     if (random === 0) {
@@ -32,6 +33,7 @@ function getComputerMove(){
     }
 }
 
+// Returns a game ending message based on the result given by the getWinner() function
 function endMessage(result) {
     let message = ``;
     if (result === 0) {
@@ -44,6 +46,7 @@ function endMessage(result) {
     return message;
 }
 
+// Updates the scores in the playerScore object based on results given by the getWinner() function
 function upDateScore(result, object){
     if (result === 0) {
         object.draws++;
@@ -54,63 +57,52 @@ function upDateScore(result, object){
     }
 }
 
-// let play = true;
-// let gamesPlayed = 0;
-// let player1Score = {
-//     wins: 0,
-//     losses: 0,
-//     draws: 0
-// };
 
-
-//while (play === true) {
-//     let player1 = prompt("Choose rock paper or scissors");
-   // let player2 = getComputerMove();
-    //let result = getWinner(player1, player2);
-//     gamesPlayed++;
-//     upDateScore(result, player1Score);
-//     play = confirm(`The result is ${endMessage(result)}, would you like to play again?\n
-//                     Games Played: ${gamesPlayed}\n
-//                     Your Wins: ${player1Score.wins}\n
-//                     Your Draws: ${player1Score.draws}\n
-//                     Your Losses: ${player1Score.losses}`);
-// }
-
-
-//Task 7
-
+// Initialise DOM references for Images
 let rockButton = document.querySelector("#rock");
 let paperButton = document.querySelector("#paper");
 let scissorsButton = document.querySelector("#scissors");
 
+// Add event listeners to DOM references
 rockButton.addEventListener("click", rockClick);
 paperButton.addEventListener("click", paperClick);
 scissorsButton.addEventListener("click", scissorsClick);
 
-function rockClick() {
-    playGame("rock")
-}
+// Functions called by DOM event listeners
+function rockClick() { playGame("rock") }
+function paperClick() { playGame("paper") }
+function scissorsClick() { playGame("scissors") }
 
-function paperClick() {
-    playGame("paper")
-}
+// Initialise DOM references for Scores
+let winsUpdate = document.querySelector("#gamesWon");
+let lossesUpdate = document.querySelector("#gamesLost");
+let drawsUpdate = document.querySelector("#gamesDrawn");
+let playsUpdate = document.querySelector("#gamesPlayed");
+let resultUpdate = document.querySelector("#resultsMessage");
 
-function scissorsClick() {
-    playGame("scissors")
-}
 
+// Initialise games score variables and values 
 let gamesPlayed = 0;
+
+// Player score object used by the upDateScore() function
 let playerScore = {
     wins: 0,
     losses: 0,
     draws: 0
 };
 
+
+// Game play function that ties together game logic, scores and DOM updates
 function playGame(playerMove) {
+    // Do the game logic
     let player2 = getComputerMove();
     let result = getWinner(playerMove, player2);
+    
+    // Update scores
     gamesPlayed++;
     upDateScore(result, playerScore);
+    
+    // Update the DOM
     winsUpdate.innerText = `Games Won: ${playerScore.wins}`;
     lossesUpdate.innerText = `Games Lost: ${playerScore.losses}`;
     drawsUpdate.innerText = `Games Drawn: ${playerScore.draws}`;
@@ -118,12 +110,5 @@ function playGame(playerMove) {
     resultUpdate.innerText = `You played ${playerMove[0].toUpperCase()+playerMove.slice(1)}, the Computer played ${player2[0].toUpperCase()+player2.slice(1)}\n
                              ${endMessage(result)}`
 }
-
-let winsUpdate = document.querySelector("#gamesWon");
-let lossesUpdate = document.querySelector("#gamesLost");
-let drawsUpdate = document.querySelector("#gamesDrawn");
-let playsUpdate = document.querySelector("#gamesPlayed");
-let resultUpdate = document.querySelector("#resultsMessage");
-
 
 
