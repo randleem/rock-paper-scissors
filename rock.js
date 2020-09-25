@@ -21,9 +21,11 @@ function getWinner(player1, player2) {
         }
 }
 
+//let player1 = prompt("Choose rock paper or scissors");
+let player2 = Math.floor(Math.random()*3);
 
-let player1 = prompt("Choose rock paper or scissors");
+console.log(player2);
 
-let result = getWinner(player1, "rock");
+//let result = getWinner(player1, "rock");
 
-alert(result);
+//alert(result);
