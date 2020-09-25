@@ -44,13 +44,13 @@ function endMessage(result) {
     return message;
 }
 
-function upDateScore(result, playerScore){
+function upDateScore(result, object){
     if (result === 0) {
-        playerScore.draws++;
-    }else if (result === 1) {
-        playerScore.wins++;
-    }else if (result === -1) {
-        playerScore.losses++;
+        object.draws++;
+    } else if (result === 1) {
+        object.wins++;
+    } else if (result === -1) {
+        object.losses++;
     }
 }
 
@@ -68,7 +68,11 @@ while (play === true) {
     let result = getWinner(player1, player2);
     gamesPlayed++;
     upDateScore(result, player1Score);
-    play = confirm(`The result is ${endMessage(result)}, would you like to play again? \n Games Played ${gamesPlayed}`);
+    play = confirm(`The result is ${endMessage(result)}, would you like to play again?\n
+                    Games Played: ${gamesPlayed}\n
+                    Your Wins: ${player1Score.wins}\n
+                    Your Draws: ${player1Score.draws}\n
+                    Your Losses: ${player1Score.losses}`);
 }
 
 // Variable for number of games played, everytime getWinner is called 1 is added to number of games played
