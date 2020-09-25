@@ -44,13 +44,30 @@ function endMessage(result) {
     return message;
 }
 
+function upDateScore(result, playerScore){
+    if (result === 0) {
+        playerScore.draws++;
+    }else if (result === 1) {
+        playerScore.wins++;
+    }else if (result === -1) {
+        playerScore.losses++;
+    }
+}
+
 let play = true;
 let gamesPlayed = 0;
+let player1Score = {
+    wins: 0,
+    losses: 0,
+    draws: 0
+};
+
 while (play === true) {
     let player1 = prompt("Choose rock paper or scissors");
     let player2 = getComputerMove();
     let result = getWinner(player1, player2);
     gamesPlayed++;
+    upDateScore(result, player1Score);
     play = confirm(`The result is ${endMessage(result)}, would you like to play again? \n Games Played ${gamesPlayed}`);
 }
 
@@ -58,6 +75,10 @@ while (play === true) {
 // Variable for accumulation of results from games played keeps track of wins losses and draws
 // Number of games played and wins, losses and draws displayed in end message
 
-
+// let player2Score = {
+//     wins: 0,
+//     losses: 0,
+//     draws: 0
+// };
 
 
