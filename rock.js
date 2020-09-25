@@ -109,14 +109,14 @@ let playerScore = {
 function playGame(playerMove) {
     let player2 = getComputerMove();
     let result = getWinner(playerMove, player2);
-    console.log(endMessage(result));  
     gamesPlayed++;
     upDateScore(result, playerScore);
     winsUpdate.innerText = `Games Won: ${playerScore.wins}`;
     lossesUpdate.innerText = `Games Lost: ${playerScore.losses}`;
     drawsUpdate.innerText = `Games Drawn: ${playerScore.draws}`;
     playsUpdate.innerText = `Games Played: ${gamesPlayed}`;
-    resultUpdate.innerText = `You Played: ${playerMove}, the Computer Played: ${player2}, ${endMessage(result)}.`
+    resultUpdate.innerText = `You played: ${playerMove[0].toUpperCase()+playerMove.slice(1)}, the Computer played: ${player2[0].toUpperCase()+player2.slice(1)}\n
+                             ${endMessage(result)}.`
 }
 
 let winsUpdate = document.querySelector("#gamesWon");
