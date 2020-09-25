@@ -25,9 +25,9 @@ function getComputerMove(){
     let random = Math.floor(Math.random()*3);
     if (random === 0) {
         return "rock";
-    }else if (random === 1) {
+    } else if (random === 1) {
         return "paper";
-    }else if (random === 2) {
+    } else if (random === 2) {
         return "scissors";
     }
 }
@@ -35,11 +35,11 @@ function getComputerMove(){
 function endMessage(result) {
     let message = ``;
     if (result === 0) {
-        message = `its a draw`;
-    }else if (result === 1) {
+        message = `Its a Draw!`;
+    } else if (result === 1) {
         message = `You Win!`;
-    }else if (result === -1) {
-        message = `Computer Wins`;
+    } else if (result === -1) {
+        message = `You Lose!`;
     }
     return message;
 }
@@ -61,6 +61,7 @@ let player1Score = {
     losses: 0,
     draws: 0
 };
+
 
 while (play === true) {
     let player1 = prompt("Choose rock paper or scissors");
