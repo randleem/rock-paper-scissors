@@ -1,13 +1,11 @@
 # Rock-Paper-Scissors
 
-*2nd October 2020*
-*Week 2 of [School of Code](https://www.schoolofcode.co.uk)*
+*25th September 2020*
+*Week 1 of [School of Code](https://www.schoolofcode.co.uk)*
 
-This was our secind week Friday hackathon at the [School of Code](https://www.schoolofcode.co.uk) where we were first introduced to fetch requests and promises. 
+This was our first-ever Friday hackathon at the [School of Code](https://www.schoolofcode.co.uk) and my first week learning JavaScript. 
 
-Jon (my paired-programming partner for the week) and I decided to use this [dad joke API](https://icanhazdadjoke.com/api) to create our app.
-
-
+I created this rock-paper-Scissors game with my partner Aftab.
 
 Happy Gaming 🪨 🧻 ✂️
 
