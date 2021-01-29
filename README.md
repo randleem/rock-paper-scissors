@@ -1,6 +1,6 @@
 # Rock-Paper-Scissors
 
-*September 2020*
+*25th September 2020*
 
 This was our first-ever Friday hackathon at the [School of Code](https://www.schoolofcode.co.uk) and my first week learning JavaScript. 
 
